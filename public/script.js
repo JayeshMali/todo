@@ -15,7 +15,7 @@ myApp.controller('myController', function($scope, $http) {
   $scope.getData=function()
   {
     console.info("inside getData");
-    $http.get("http://localhost:3000/todo/index.json")
+    $http.get("/index.json")
      .then(function(response) {
          $scope.list = response.data;
         console.info($scope.list);
