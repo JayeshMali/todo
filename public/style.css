@@ -1,0 +1,81 @@
+@import url('http://fonts.googleapis.com/css?family=Tangerine');
+@import url('http://fonts.googleapis.com/css?family=Pacifico');
+
+.con
+{
+
+  background-image:url("http://static1.squarespace.com/static/5576548ae4b02f4b87943018/t/55cdeffae4b0a4f80be7ef60/1439559679211/books+background+picture.jpg?format=1500w");
+  background-repeat:no-repeat;
+  background-position:center;
+  width:100%;
+  height:auto;
+}
+
+/*.form-control ,select
+{
+  background:white;
+}*/
+
+.alink
+{
+  color:blue;
+  font-family:Pacifico;
+  font-size:25px;
+}
+
+.content{
+   background:white;
+}
+.col
+{ width: 1200px; margin:60px;}
+
+.col_in
+{
+  width: 400px; height: 100px; float: left;
+  text-align:center;
+}
+
+
+.heading
+{
+  color:blue;
+  font-family:Tangerine,sans-serif;
+  font-size:80px;
+  font-weight:bold;
+  text-align:center;
+}
+.in
+{
+  font-size:30px;
+}
+.btn1
+{
+  font-size:30px;
+}
+
+
+.tick:checked+a
+{
+  color:black;
+  text-decoration: line-through;
+}
+
+.myBox
+{
+  color:#a9a9a9;
+  font-family:Pacifico;
+  font-size: 30px;
+  background:none;
+  text-align:center;
+}
+
+
+}
+.com
+{
+  color:gray;
+  font-family:Pacifico;
+  font-size:30px;
+  background:none;
+  text-decoration:line-through;
+}

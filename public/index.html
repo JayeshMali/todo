@@ -1,0 +1,141 @@
+<html ng-app="demoApp">
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="UTF-8">
+     <script src="angular.min.js"></script>
+     <script src="jquery-2.2.1.js"></script>
+    <script src="ng-tags-input.min.js"></script>
+    <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+   <link rel="stylesheet" href="ng-tags-input.min.css" />
+     <script type="text/javascript" src="script.js"></script>
+   <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="con" ng-controller='myController' ng-init="getData()">
+
+     <h1 class="heading">My To-Dos</h1>
+     <div class="col">
+
+        <div class="col_in">
+          <form class="in">
+            <div class="col-xs-8">
+            <input type="text" ng-model="searchItem" class="form-control" placeholder="Search tasks..">
+            </div>
+          </form>
+      </div>
+
+    <div class="col_in" style="text-align:center">
+
+      <form class="in" ng-submit="addItem(item)">
+             <div class="col-xs-12">
+              <input id="txt1" class="form-control content" ng-model="item" placeholder="What's next.." required>
+             </div>
+              <button class="btn btn-primary" ng-if="item" data-toggle="modal" data-target="#desModal">Submit</button>
+              </form>
+
+      <!-- <form class="in" ng-submit="addItem(item)">
+        <div class="col-xs-10">
+         <input id="txt" class="form-control content" ng-model="item" placeholder="What's next.." required>
+        </div><br>
+         <button class="btn btn-primary" ng-if="item" data-toggle="modal" data-target="#desModal">Submit</button>
+         </form> -->
+
+         <br><br><br>
+          <button class="btn btn-primary btn-large" ng-click="delete()">Clear List</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="btn btn-primary" ng-click="getData()">View All</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="btn btn-primary" ng-click="showCompleted()">View Completed</button>
+            <br>
+         <br><br>
+      <!-- table of contents -->
+
+         <table class="table-hover">
+           <thead class="myBox">
+               <tr class="row-xs-6">
+                 <th style="text-align:center">Tasks</th>
+               </tr><br>
+             </thead>
+    <tbody>
+      <tr ng-repeat="item in list | filter : searchItem   track by $index" >
+        <td class="col-md-1"><input ng-click="updateStatus(item) " type="checkbox" class="tick" ng-model="item.status">
+             <a ng-model="item" ng-bind="item.name" ng-click="clicked(item)" data-toggle="modal" data-target="#editModal" class="alink"></a></td>
+        <td class="col-md-1"><button class="btn btn-danger btn-xs" ng-click="close(item)">&times;</button></td>
+
+
+       </tr>
+      </tbody>
+     </table>
+
+      <!-- For editing details -->
+       <div class="modal fade" id="editModal" role="dialog">
+            <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Edit Details</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table>
+                              <tr>
+                                    <td><label style="font-size:20px">Task : </label></td>
+                                    <td>
+                                 <input ng-model="str" class="form-control" placeholder="Edit task-name">
+                                 </td>
+                              </tr>
+                              <tr>
+                                    <td><label style="font-size:20px">Tags : </label></td>
+                                    <td><tags-input ng-model="subTag" placeholder="Edit tags"></tags-input></td>
+                              </tr>
+
+                              <tr>
+                                 <td><label style="font-size:20px">Details : </label></td>
+                                 <td><textarea rows="4" cols="50" class="form-control" ng-model="detail" placeholder="Edit description" required></textarea></td>
+
+                                </tr>
+                             </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" ng-click="editDescription(subTag,detail)" data-dismiss="modal">Update</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+            </div>
+         </div>
+
+      <!--For Adding details-->
+      <div class="modal fade" id="desModal" role="dialog">
+            <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add Details</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table>
+                              <tr>
+                                    <td><label style="font-size:20px">Tag : </label></td>
+                                    <td><tags-input ng-model="subTag"></tags-input></td>
+                              </tr>
+                              <tr>
+                                 <td><label style="font-size:20px">Details : </label></td>
+                                 <td><textarea rows="4" cols="50" class="form-control" ng-model="detail" placeholder="Add description here.." required></textarea></td>
+                               </tr>
+                             </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" ng-click="addDescription(item,detail,subTag)" data-dismiss="modal">Add</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="clearFunc()">Cancel</button>
+
+                        </div>
+                    </div>
+            </div>
+         </div>
+       </div>
+       </div>
+
+
+           </div>
+    </div>
+
+  </body>
+</html>

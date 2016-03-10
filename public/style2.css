@@ -1,0 +1,76 @@
+@import url('http://fonts.googleapis.com/css?family=Tangerine');
+@import url('http://fonts.googleapis.com/css?family=Pacifico');
+
+.con
+{
+  background-image:url("http://oxygennacdn1.oxygenna.com/wp-content/uploads/2015/04/blog-02.jpg");
+
+  width:100%;
+  height:auto;
+}
+
+.content{
+   background:none;
+}
+.col
+{ width: 1200px; margin:60px;}
+
+.col_in
+{
+  width: 400px; height: 100px; float: left;
+  text-align:center;
+}
+
+.heading
+{
+  color:blue;
+  font-family:Tangerine,sans-serif;
+  font-size:80px;
+  font-weight:bold;
+  text-align:center;
+}
+.in
+{
+  font-size:30px;
+}
+.btn1
+{
+  font-size:30px;
+}
+
+
+.tick:checked+a
+{
+  color:black;
+  text-decoration: line-through;
+}
+
+.myBox
+{
+  color:blue;
+  font-family:Pacifico;
+  font-size: 30px;
+  background:none;
+  text-align:center;
+}
+
+.hiddendiv {
+  display:none;
+
+}
+.visiblediv {
+  display:block;
+
+}
+.com
+{
+  color:gray;
+  font-family:Pacifico;
+  font-size:30px;
+  background:none;
+  text-decoration:line-through;
+}
+.close{
+  border:solid;
+  color:black;
+}

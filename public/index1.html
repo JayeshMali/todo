@@ -1,0 +1,41 @@
+<html ng-app="app">
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script type="text/javascript" src="script1.js"></script>
+
+</head>
+
+<body ng-controller="HttpGetController">
+  <!-- <form action="todo/create" method="POST"> -->
+  <form ng-submit="SendData()">
+  <table>
+    <tr>
+      <td>name</td>
+    <td><input type="text" name="name" ng-model="content.name"></td>
+  </tr>
+  <tr>
+    <td>status</td>
+  <td>True<input type="radio" name="status" value="true" ng-model="content.status" ></td>
+  <td>False<input type="radio" name="status" value="false" ng-model="content.status"></td>
+</tr>
+<tr>
+  <td>detail</td>
+<td><input type="text" name="detail" ng-model="content.detail"></td>
+</tr>
+<!-- <tr>
+  <td>Tag</td>
+<td><input type="text" name="tag_name" ng-model="content.tag_name[0]"></td>
+</tr>
+<tr>
+  <td>Tag</td>
+<td><input type="text" name="tag_name" ng-model="content.tag_name[1]"></td>
+</tr> -->
+
+<tr>
+    <td><input type="submit" value="Submit"></td>
+  </tr>
+</table>
+  </form>
+</body>
+</html>
