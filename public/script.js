@@ -54,7 +54,7 @@ console.info("CONTENT");
 console.info($scope.content);
 var val= $http({
    method: 'POST',
-   url: 'http://localhost:3000/todo/create',
+   url: '/todo/create',
    data: $scope.content
    //headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 });
@@ -96,7 +96,7 @@ $scope.getData();
     console.info(myTag);
     var val= $http({
        method: 'POST',
-       url: 'http://localhost:3000/todo/update',
+       url: '/todo/update',
        data: $scope.content
        //headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     });
@@ -114,7 +114,7 @@ $scope.getData();
  console.info(item);
  $http({
       method: 'POST',
-      url: 'http://localhost:3000/todo/delete',
+      url: '/todo/delete',
       data: item
 
   });
@@ -152,7 +152,7 @@ $scope.getData();
 
   $scope.showCompleted = function() {
     console.info("inside getData");
-    $http.get("http://localhost:3000/todo/status_true.json")
+    $http.get("/todo/status_true.json")
      .then(function(response) {
          $scope.list = response.data;
         console.info($scope.list);
@@ -165,7 +165,7 @@ $scope.getData();
       console.info(val);
       $http({
            method: 'POST',
-           url: 'http://localhost:3000/todo/delete',
+           url: '/todo/delete',
            data: val
        });
     });
@@ -177,7 +177,7 @@ $scope.getData();
     console.info(task.status);
     $http({
          method: 'POST',
-         url: 'http://localhost:3000/todo/edit',
+         url: '/todo/edit',
          data: task
      });
      $scope.getData();
